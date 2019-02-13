@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "partials :: head('Send Mail')">
+</head>
+<body>
+
+<div class="container uk-flex">
+    <form th:action="@{/sendMail}" method="POST" class="uk-margin-auto uk-width-1-3 ">
+        <h1 class="uk-margin-top">Send New Mail</h1>
+        <div class="uk-margin uk-text-center uk-text-left@s">
+            <label for="subject">Subject</label>
+            <input id="subject" class="uk-input uk-form-width-medium uk-width-expand uk-margin-bottom" type="text" name="subject"/>
+        </div>
+        <div class="uk-margin uk-text-center uk-text-left@s">
+            <label for="body">Body</label>
+            <input id="body" class="uk-input uk-form-width-medium uk-width-expand uk-margin-bottom" type="text" name="body"/>
+        </div>
+        <div class="uk-width-expand uk-flex">
+            <button class="uk-button uk-button-primary" id="submit">Send Mail</button>
+        </div>
+        <a th:href="@{/addMailer}">Add a new contact</a>
+    </form>
+</div>
+
+<div th:replace="partials :: scripts" />
+<div th:replace="partials :: footer" />
+</body>
+</html>
